@@ -5,6 +5,11 @@
 body, ul {
     margin: 0px;
     padding: 0px;
+    
+}
+
+.bgportifolio {
+    background-color: rgb(209, 209, 209);
 }
 
 a {
