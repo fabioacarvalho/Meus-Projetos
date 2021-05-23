@@ -1,6 +1,6 @@
 const btnMobile = document.getElementById('btn-mobile')
 
-/* Add Funcionalidades do Botão */
+/* Adicionando Funcionalidades do Botão */
 
 function toggleMenu(event) {
     if(event.type === 'touchstart') event.preventDefault()
