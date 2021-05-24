@@ -1,7 +1,6 @@
 <template>
-    <div >
+    <div class="general">
         <div class="header">
-
             <a target="_blank" href="https://github.com/fabioacarvalho">
                 <img id="linkgituhub" src="https://www.vectorlogo.zone/logos/github/github-tile.svg" data-canonical-src="https://img.shields.io/badge/github-%23100000.svg?&amp;style=for-the-badge&amp;logo=github&amp;logoColor=white&amp;link=mailto:https://github.com/fabioacarvalho">
              </a>             
@@ -31,9 +30,12 @@ export default {
     * {
         padding: 0px;
         margin: 0px;
+               
+    }
+
+    div, .general {
         background-image: url("../assets/imagens/capa.png");
         background-repeat: no-repeat;
-        
     }
     
 
@@ -45,6 +47,7 @@ export default {
         height: 700px;
         width: 800px;
         padding-top: 10px;
+        z-index: 9000;
 
     }
 
@@ -80,7 +83,7 @@ export default {
         width: 50px;
         background: transparent;
         float: right;
-        margin: -50px 180px -50px 0px;
+        margin: 0px 150px -50px 0px;
         z-index: 10000;
     }
 
@@ -89,7 +92,7 @@ export default {
         width: 50px;
         background: transparent;
         float: right;
-        margin: -50px 110px -50px 0px;
+        margin: 0px 80px -50px 0px;
         z-index: 10000;
     }
 
@@ -98,7 +101,7 @@ export default {
         width: 50px;
         background: transparent;
         float: right;
-        margin: -50px 250px -50px 0px;
+        margin: 0px 220px -50px 0px;
         z-index: 10000;
     }
 
