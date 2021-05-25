@@ -43,6 +43,18 @@ export default {
     grid-area: sobre;
   }
   
+  @media(max-width: 700px) {
+        #app {
+          display: grid;
+          grid-auto-columns: 100%;
+          grid-auto-rows: 1fr 1fr;
+          grid-template-areas: 
+            "header"
+            "sobre"
+    
+    ;
+        }
+    }
 
 
 </style>
