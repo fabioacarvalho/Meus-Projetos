@@ -1,7 +1,9 @@
 <template>
     <div id="start">
         <div id="iconsinicio">
-            
+            <img class="ficons" src="../assets/icons/github-tile.svg" alt="github">
+            <img class="ficons" src="../assets/icons/linkedin-tile.svg" alt="linkedin">
+            <img class="ficons" src="../assets/icons/gmail-icon.svg" alt="gmail">
         </div>
         <div id="textinicio">
             <h1>FÁBIO CARVALHO</h1>
@@ -43,10 +45,20 @@ export default {
         color: white;
     }
 
-    
+    .ficons {
+        height: 2rem;
+        width: 2rem;
+        
+    }
 
     #iconsinicio {
         grid-area: iconsinicio;
+        display: flex;
+        text-align: right;
+        gap: 1rem;
+        justify-content: center;
+        
+
     }
 
     #textinicio {
@@ -63,9 +75,7 @@ export default {
     #imgperfil {
         height: 80vh;
         width: 80vw;
-        max-width: 600px;
-
-        
+        max-width: 600px;        
         
     }
 </style>
