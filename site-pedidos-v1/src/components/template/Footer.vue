@@ -1,5 +1,5 @@
 <template>
-  
+    <footer>Desenvolvido por Fábio Carvalho</footer>
 </template>
 
 <script>
