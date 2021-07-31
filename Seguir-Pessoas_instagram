@@ -4,7 +4,7 @@ arr.forEach((v, i) => {
     setTimeout(() => {
         if(!v.classList.contains('_8A5w5')) {
             v.click()
-            constador++
+            contador++
             console.log('Já seguimos: ' + contador + 'pessoas.' )
         } else {
             console.log('Você já segue este usuario')
