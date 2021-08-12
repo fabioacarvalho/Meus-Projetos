@@ -1,6 +1,5 @@
 <template>
     <v-container>
-        
         <v-content>
             <v-row>
                 <v-select v-model="obra" :items="listaObra" :error-messages="errors" label="Obra" data-vv-name="select" required></v-select>
@@ -20,6 +19,21 @@
                     <p id="timer" > {{ hora + ':' + minutos + ':' + segundos }} </p>
                 </row>
         </v-layout>
+
+        <v-data-table
+            :headers="headers"
+            :items="desserts"
+            :items-per-page="5"
+            item-key="name"
+            class="elevation-1"
+            :footer-props="{
+            showFirstLastPage: true,
+            firstIcon: 'mdi-arrow-collapse-left',
+            lastIcon: 'mdi-arrow-collapse-right',
+            prevIcon: 'mdi-minus',
+            nextIcon: 'mdi-plus'
+            }"
+        ></v-data-table>
         
     </v-container>  
 </template>
@@ -49,7 +63,23 @@ export default {
         segundos: 0,
         minutos: 0,
         hora: 0,
-        timerView: false
+        timerView: false,
+        data: [],
+        fields: [
+            { key: 'id', label: 'Código', sortable: true },
+            { key: 'name', label: 'Nome', sortable: true },
+            { key: 'description', label: 'Descrição', sortable: true },
+            { key: 'actions', label: 'Ações'}
+        ],
+        headers: [
+        {
+            text: 'Dessert (100g serving)',
+            align: 'start',
+            value: 'name',
+        },
+        { text: 'Category', value: 'category' },
+        ],
+        desserts: [],
       
     }),
     methods: {
@@ -92,6 +122,9 @@ export default {
         setData() {
             alert('Registrado: ' + this.obra + ', ' + this.email + ', ' + this.etapa + ` total: ${this.hora}h:${this.minutos}min:${this.segundos}s`)
             this.stop()
+        },
+        save() {
+            this.desserts.push({ name: this.obra, category: this.etapa })
         }
     }
 }

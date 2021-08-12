@@ -7,18 +7,20 @@
         <v-toolbar-items >
             <v-btn class="white--text" flat to="/">Início</v-btn>
             <v-btn class="white--text" flat to="/pomodoro">Pomorodo</v-btn>
-            <v-btn class="white--text" flat to="/Dashboard">Dashboard</v-btn>
+            <v-btn class="white--text" flat to="/dashboard">Dashboard</v-btn>
+            <v-btn class="white--text" flat to="/table">Tabela</v-btn>
+            <v-btn class="white--text" flat to="/table">Cadastro</v-btn>
         </v-toolbar-items>
 
         <v-spacer></v-spacer>
 
         <v-toolbar-items>
-            <v-btn flat >Finalizar Dia</v-btn>
+
             <v-menu offset-y>
-                <v-btn flat slot="activator"> Salvar & Carregar</v-btn>
+                <v-btn class="white--text" flat slot="activator"> Salvar & Carregar</v-btn>
                 <v-list>
                     <v-list-tile >
-                        <v-list-tile-title>Salvar Dados</v-list-tile-title>
+                        <v-list-tile-title >Salvar Dados</v-list-tile-title>
                     </v-list-tile>
                     <v-list-tile >
                         <v-list-tile-title>Carregar Dados</v-list-tile-title>
