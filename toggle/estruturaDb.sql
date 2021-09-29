@@ -18,7 +18,7 @@ create table usuario(
     nomeUsuario varchar(50) not null,
     email varchar(50) not null,
     telefone varchar(15) not null,
-    dataContrato varchar(8) not null,
+    dataContrato varchar(10) not null,
     idProjeto int,
     foreign key(idProjeto) references projeto(idProjeto)
 );
