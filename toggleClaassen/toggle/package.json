@@ -16,6 +16,7 @@
     "axios": "^0.21.4",
     "core-js": "^3.6.5",
     "electron-serve": "^1.1.0",
+    "firebase": "^9.1.0",
     "nodemon": "^2.0.13",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2",
