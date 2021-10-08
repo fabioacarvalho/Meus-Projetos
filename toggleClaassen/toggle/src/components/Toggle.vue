@@ -82,9 +82,6 @@
         </v-card-actions>
       </v-card>
       <br>
-      <v-row>
-        <Relogio />
-      </v-row>
     </v-container>
     
   </v-container>
@@ -92,10 +89,9 @@
 </template>
 
 <script>
-import Relogio from './Relogio.vue'
+
   export default {
-    
-    components: { Relogio },
+
     data () {
       return {
         order: {
