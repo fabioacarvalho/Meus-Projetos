@@ -1,7 +1,8 @@
 <template>
   <v-app>
-    <Header />
-    <v-main>
+    <Header v-if="acesso == true" />
+	<Login v-if="acesso == false" />
+    <v-main v-if="acesso == true">
 			<v-container>
 				<transition name="slide" mode="out-in">
 					<router-view></router-view>
@@ -13,17 +14,19 @@
 
 <script>
 import Header from './components/Header.vue'
+import Login from './components/Login.vue'
 
 export default {
   name: 'App',
   components: {
+    Login,
     Header,
   },
-  data () {
-    return {
-
-    }
-  },
+  computed: {
+	acesso() {
+		return this.$store.state.acesso
+	}
+  }
 };
 </script>
 

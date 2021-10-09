@@ -1,6 +1,26 @@
 <template>
+  
   <v-container fluid>
-    <v-container>
+
+
+    <v-row>
+      <v-col
+        cols="12"
+        md="4"
+      >
+        <v-btn color="success">REGISTRO MANUAL</v-btn>
+      </v-col>
+      <v-col
+        cols="12"
+        md="4"
+      >
+        <v-btn color="primary">REGISTRO TOGGL</v-btn>
+      </v-col>
+    </v-row>
+
+
+
+    <v-container v-if="toggl == false">
       <v-container v-if="timerView == false" fluid>
         <v-row>
           <v-col cols="12">
@@ -19,7 +39,6 @@
               v-model="order.etapa"
               :items="valoresEtapa"
               label="Etapa"
-      
               outlined
               dense
             ></v-combobox>
@@ -32,8 +51,8 @@
         </v-row>
         <v-row >
           <v-menu
-            ref="menu"
-            v-model="menu"
+            ref="menu2"
+            v-model="menu2"
             :close-on-content-click="false"
             transition="scale-transition"
             offset-y
@@ -54,14 +73,14 @@
               :active-picker.sync="activePicker"
               :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
               min="1950-01-01"
-              @change="save"
+              
             ></v-date-picker>
           </v-menu>
         </v-row>
       </v-container>
       <!-- TIMER -->
-      <v-row class="ma-auto" v-if="timerView == false">
-        <v-btn color="secondary" @click="timer">Iniciar</v-btn>
+      <v-row class="ma-auto" v-if="timerView == false" >
+        <v-btn color="secondary" @click="timer" :disabled="order.arquiteto == '' || order.etapa == '' || order.cliente == '' || order.data == ''">Iniciar</v-btn>
       </v-row>
       <v-card v-if="timerView == true" class="mx-auto" max-width="344" outlined >
         <v-list-item three-line>
@@ -83,15 +102,19 @@
       </v-card>
       <br>
     </v-container>
+
+    <v-container>
+      <Registro v-if="registro == false" />
+    </v-container>
     
   </v-container>
 
 </template>
 
 <script>
-
+import Registro from './Registro.vue'
   export default {
-
+    components: { Registro },
     data () {
       return {
         order: {
@@ -103,52 +126,6 @@
           timeFim: '',
           tempoProjeto: ''
         },
-        items: [
-          'Cristina',
-          'Carol',
-          'Isabely',
-          'Guilherme',
-          'Karen'
-        ],
-        valoresEtapa: [
-          'Levantamento/Briefing/Digitalização',
-          'PM - Processo Criativo',
-          'PM - Renderização + Apresentação',
-          'Adequações',
-          'Projeto Legal',
-          'Projeto Executivo',
-          'Projeto Executivo Mobiliário',
-          'Assessoria para compras',
-        ],
-        valoresCliente: [
-          'Rafael Melcher',
-          'Altemisa Carneiro',
-          'Luis Gabriel ',
-          'Andrea e Paulo',
-          'Anderson Primo',
-          'Rafael Gamballi',
-          'Lincoln Taylor',
-          'Letícia Locatelli',
-          'Nelson Carvalho',
-          'Caio Luiz Vital',
-          'Carlos Zimmer',
-          'Dulce Osinski',
-          'Paulo Vizzotto',
-          'Eunice Chavinski',
-          'Ana Maria Schwarz',
-          'Bruno Carvalho',
-          'Renata de Paula',
-          'runo Peruzzo de Pádua',
-          'aniel Bucheb',
-          'oris Karam',
-          'aroline Borba',
-          'ábio Cunha',
-          'eivid Dias',
-          'Vânia Muniz Nequer',
-          'Jair de Azevedo',
-          'ristiane Magliari',
-          'Bruno Prazeres',
-        ],
         activePicker: null,
         timerView: false,
         date: null,
@@ -162,6 +139,9 @@
         minutos: 0,
         hora: 0,
         valid: true,
+
+        registro: false,
+        toggl: false,
         
         emailRules: [
           v => !!v || 'E-mail is required',
@@ -242,8 +222,17 @@
         this.hora = 0
         this.timerView = false
       },
-      
-    
+    },
+    computed: {
+        items() {
+            return this.$store.state.items
+        },
+        valoresEtapa() {
+            return this.$store.state.valoresEtapa
+        },
+        valoresCliente() {
+            return this.$store.state.valoresCliente
+        },
     }
   
   }
