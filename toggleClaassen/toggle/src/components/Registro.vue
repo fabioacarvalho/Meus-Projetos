@@ -1,68 +1,78 @@
 <template>
-    <v-container>
-      <v-container v-if="timerView == false" fluid>
-        <v-row>
-            <v-col cols="12">
-                <v-combobox
-                v-model="order.arquiteto"
-                :items="items"
-                label="Arquiteto"
-                outlined
-                dense
-                ></v-combobox>
-            </v-col>
-        </v-row>
-        <v-row>
-          <v-col cols="12">
-            <v-combobox
-                v-model="order.etapa"
-                :items="valoresEtapa"
-                label="Etapa"
-        
-                outlined
-                dense
-                ></v-combobox>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col cols="12">
-                <v-combobox v-model="order.cliente" :items="valoresCliente" label="Cliente" outlined dense ></v-combobox>
-            </v-col>
-        </v-row>
-        <v-row >
-            <v-menu
-                ref="menu"
-                v-model="menu"
-                :close-on-content-click="false"
-                transition="scale-transition"
-                offset-y
-                min-width="auto"
-            >
-            <template v-slot:activator="{ on, attrs }">
-              <v-text-field
-                v-model="order.data"
-                label="Data do Registro"
-                prepend-icon="mdi-calendar"
-                readonly
-                v-bind="attrs"
-                v-on="on"
-              ></v-text-field>
-            </template>
-            <v-date-picker
-                v-model="order.data"
-                :active-picker.sync="activePicker"
-                :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
-                min="1950-01-01"
-              
-            ></v-date-picker>
-          </v-menu>
-        </v-row>
-      </v-container>
+  <v-container >
+    <h1>REGISTRO</h1>
+    <v-container v-if="timerView == false" fluid>
+      <v-row>
+        <v-col cols="12">
+          <v-combobox
+            v-model="order.arquiteto"
+            :items="items"
+            label="Arquiteto"
+            outlined
+            dense
+          ></v-combobox>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12">
+          <v-combobox
+            v-model="order.etapa"
+            :items="valoresEtapa"
+            label="Etapa"
+            outlined
+            dense
+          ></v-combobox>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col cols="12">
+          <v-combobox v-model="order.cliente" :items="valoresCliente" label="Cliente" outlined dense ></v-combobox>
+        </v-col>
+      </v-row>
+      <v-row >
+        <v-menu
+          ref="menu2"
+          v-model="menu2"
+          :close-on-content-click="false"
+          transition="scale-transition"
+          offset-y
+          min-width="auto"
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-text-field
+              v-model="order.data"
+              label="Data do Registro"
+              prepend-icon="mdi-calendar"
+              readonly
+              v-bind="attrs"
+              v-on="on"
+            ></v-text-field>
+          </template>
+          <v-date-picker
+            v-model="order.data"
+            :active-picker.sync="activePicker"
+            :max="(new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)"
+            min="1950-01-01"
+          ></v-date-picker>
+        </v-menu>
+      </v-row>
+      <v-row>
+        <v-text-field 
+          v-model="tempoProjeto"
+          label="Picker in menu"
+          prepend-icon="mdi-clock-time-four-outline"
+          v-bind="attrs"
+          v-on="on"
+        ></v-text-field>
+      </v-row>
+      
+    </v-container>
+  </v-container>
 </template>
+
+
 <script>
-
   export default {
-
     data () {
       return {
         order: {
@@ -75,13 +85,12 @@
           tempoProjeto: ''
         },
         activePicker: null,
+        timerView: false,
         date: null,
         menu1: false,
         modal1: false,
         menu2: false,
         modal2: false,
-        valid: true,
-        
       }
     },
     methods: {
@@ -91,7 +100,7 @@
             this.clear()
 
           })
-      },  
+      },
       clear() {
         this.order = {
           arquiteto: '',
@@ -102,8 +111,8 @@
           timeFim: '',
           tempoProjeto: ''
         }
-      },   
-    
+
+      },
     },
     computed: {
         items() {

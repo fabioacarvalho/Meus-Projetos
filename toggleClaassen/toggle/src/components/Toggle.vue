@@ -8,17 +8,12 @@
         cols="12"
         md="4"
       >
-        <v-btn color="success">REGISTRO MANUAL</v-btn>
-      </v-col>
-      <v-col
-        cols="12"
-        md="4"
-      >
-        <v-btn color="primary">REGISTRO TOGGL</v-btn>
+        <v-btn color="success" to="/registro">REGISTRO MANUAL</v-btn>
       </v-col>
     </v-row>
-
-
+    <br>
+    <hr>
+    <h1>TOGGL</h1>
 
     <v-container v-if="toggl == false">
       <v-container v-if="timerView == false" fluid>
@@ -102,19 +97,13 @@
       </v-card>
       <br>
     </v-container>
-
-    <v-container>
-      <Registro v-if="registro == false" />
-    </v-container>
     
   </v-container>
 
 </template>
 
 <script>
-import Registro from './Registro.vue'
   export default {
-    components: { Registro },
     data () {
       return {
         order: {
