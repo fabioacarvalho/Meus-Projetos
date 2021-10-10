@@ -58,12 +58,14 @@
       </v-row>
       <v-row>
         <v-text-field 
-          v-model="tempoProjeto"
-          label="Picker in menu"
+          v-model="order.tempoProjeto"
+          label="Tempo Projeto"
           prepend-icon="mdi-clock-time-four-outline"
-          v-bind="attrs"
-          v-on="on"
+          type="time"
         ></v-text-field>
+      </v-row>
+      <v-row class="ma-auto" >
+        <v-btn color="secondary" @click="salvar" :disabled="order.arquiteto == '' || order.etapa == '' || order.cliente == '' || order.data == '' || order.tempoProjeto == '' ">Registrar</v-btn>
       </v-row>
       
     </v-container>
@@ -80,8 +82,6 @@
           cliente: '',
           etapa: '',
           data: '',
-          timeInicio: '',
-          timeFim: '',
           tempoProjeto: ''
         },
         activePicker: null,
@@ -107,8 +107,6 @@
           cliente: '',
           etapa: '',
           data: '',
-          timeInicio: '',
-          timeFim: '',
           tempoProjeto: ''
         }
 
