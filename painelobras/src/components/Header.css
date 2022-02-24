@@ -1,0 +1,28 @@
+.Nav nav {
+    width: 100vw;
+    height: 10vh;
+
+    background-color: cadetblue;
+
+    color: white;
+
+    display: flex;
+}
+
+.Nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.Nav li {
+    padding: 10px;
+    margin: 10px;
+}
