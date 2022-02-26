@@ -1,17 +1,19 @@
 .Nav nav {
-    width: 100vw;
-    height: 10vh;
+    width: 15vw;
+    height: 100vh;
 
-    background-color: cadetblue;
+    background-color: rgb(69, 98, 131);
 
     color: white;
 
     display: flex;
+    flex-direction: column;
 }
 
 .Nav ul {
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
 }
