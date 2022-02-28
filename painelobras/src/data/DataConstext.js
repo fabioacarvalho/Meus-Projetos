@@ -1,13 +1,9 @@
-import React from "react";
+import React from 'react'
 
 export const data = {
-    fornecedores: {
-        nome: 'Construção',
-        tel: '9876543210',
-        email: 'fasads@dasdsa.com'
-    }
+    number: 123,
+    text: 'Context API...'
 }
-
 
 const DataContext = React.createContext(data)
 

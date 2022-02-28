@@ -11,7 +11,7 @@ const App = props => {
     const [state, setState] = useState(data)
 
     return (
-        <DataContext.Provider>
+        <DataContext.Provider value={{state, setState}}>
             <div className="App">
                 
                 <Body className="Body" />
