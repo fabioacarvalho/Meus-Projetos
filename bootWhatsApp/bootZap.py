@@ -2,7 +2,8 @@ import pandas as pd
 
 contato_df = pd.read_excel("teste.xlsx")
 
-display(contato_df)
+#Apenas para mostrar na tela a tabela:
+#display(contato_df)
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
