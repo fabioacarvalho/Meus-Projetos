@@ -1,0 +1,82 @@
+Date: 12/3/2022
+Time: 15:7
+Phone Number: +5541998299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:9
+Phone Number: +5541998299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:37
+Phone Number: +554198299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:39
+Phone Number: +554198299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:51
+Phone Number: +554198299523
+Image: imagens/flyer.jpeg
+Caption: 
+--------------------
+Date: 12/3/2022
+Time: 15:52
+Phone Number: +554198299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:53
+Phone Number: +554198299523
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:56
+Phone Number: +554184300484
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 15:58
+Phone Number: +554184300484
+Image: imagens/flyer.jpeg
+Caption: 
+--------------------
+Date: 12/3/2022
+Time: 16:16
+Phone Number: +554184300484
+Message: Teste Bot Whatsapp
+--------------------
+Date: 12/3/2022
+Time: 16:23
+Phone Number: +55998299523
+Image: Images/mouse.png
+Caption: 
+--------------------
+Date: 12/3/2022
+Time: 16:24
+Phone Number: +5541998299523
+Image: Images/mouse.png
+Caption: 
+--------------------
+Date: 12/3/2022
+Time: 16:27
+Phone Number: +554184300484
+Image: Images/fly.png
+Caption: Oi confira as novidades...
+--------------------
+Date: 12/3/2022
+Time: 16:27
+Phone Number: +554187665242
+Image: Images/fly.png
+Caption: Oi confira as novidades...
+--------------------
+Date: 12/3/2022
+Time: 16:28
+Phone Number: +554198299523
+Image: Images/fly.png
+Caption: Oi confira as novidades...
+--------------------
