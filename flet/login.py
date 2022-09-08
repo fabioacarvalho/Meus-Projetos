@@ -14,11 +14,16 @@ def main(page):
     def btn_click(e):
         dados.insert(0, login.value)
         dados.insert(1, senha.value)
-        infos.controls.append(Text(f"Login: {dados[0]} Senha: {dados[1]}!"))
-        login.value = ""
-        senha.value = ""
-        page.update()
-        login.focus()
+        if dados[0] == 'fabio' and dados[1] == '123':
+            infos.controls.append(Text(f"Login: {dados[0]} Senha: {dados[1]}!"))
+            login.value = ""
+            senha.value = ""
+            page.update()
+            login.focus()
+        else:
+            infos.controls.append(Text(f"Dados inseridos estão errados!"))
+            page.update()
+            login.focus()
 
     page.add(
         login,
