@@ -6,7 +6,7 @@ def main(page):
 
     login = TextField(label="Login", keyboard_type="email", autofocus=True, border_radius=10)
     senha = TextField(label="Senha", password=True, border_radius=10 )
-    
+
     infos = Column()
 
     dados = []
