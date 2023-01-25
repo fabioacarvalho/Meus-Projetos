@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pintura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Seja Bem Vindo(a)</h1>
+        <h3>Aqui você pode calcular o valor da pintura da sua casa.</h3>
+    </header>
+    <main>
+        <div>
+            <label for="option">
+                <input type="radio" value="option1" name="option" id="option1" > Tenho a área <br>
+                <input type="radio" value="option2" name="option" id="option2" > Comprimento x Largura
+            </label> <br>
+        </div>
+        <button onclick="showOption()">Ir</button>
+        <div id="area">
+            <p>Valor em m² se tiver:</p>
+            <input id="area" type="number" placeholder="Digite aqui o valor em m²">
+            <button>Calcular Valor</button>
+        </div>
+        <div id="valores">
+            <p>Calcule o valor:</p>
+            <input id="largura" type="number" placeholder="Digite aqui a largura em metros"> <span> X </span>
+            <input id="comprimento" type="number" placeholder="Digite aqui o comprimento em metros">
+            <p id="result"></p>
+            <button onclick="calcularValor()">Calcular Valor</button>
+        </div>
+    </main>
+</body>
+
+<script>
+    function calcularValor() {
+        let area = parseFloat(document.getElementById("area").value)
+        let largura = parseFloat(document.getElementById("largura").value)
+        let comprimento = parseFloat(document.getElementById("comprimento").value)
+        let result = document.getElementById('result')
+
+        resultado = parseFloat(((largura * comprimento) / 250) * 578)
+
+        result.innerHTML = `<b> R$ ${resultado} </b>`
+        // result.appendChild('TESTE')
+    }
+
+    document.getElementById("btnSubmit").onclick = function() {
+    }
+    
+    function showOption() {
+        var radios = document.getElementsByName("option");
+        let valores = document.getElementById("valores")
+        let area = document.getElementById("area")
+        let result = document.getElementById('result')
+        let option1 = document.getElementById('option1').value
+        let option2 = document.getElementById('option2').value
+
+        if (radios[i].checked) {
+            if (option1 == "option1") {
+                console.log("Escolheu: " + option1);
+                area.setAttribute("style", "diplay: show;")
+                valores.setAttribute("style", "diplay: none;")
+                
+            } 
+            if (option2 == "option2") {
+                console.log("Escolheu: " + option2);
+                valores.setAttribute("style", "diplay: show;")
+                area.setAttribute("style", "diplay: none;")
+                area.setAttribute("hidden", "hidden")
+
+            }
+        }
+    
+    
+};
+
+</script>
+
+</html>
