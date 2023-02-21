@@ -22,15 +22,23 @@
     <button id="btn" onclick="sendFetchRequest()">CLIQUE AQUI</button>
 </div>
 
-
+<!-- Token de segurança 1 -->
 {% csrf_token %}
 <script>
     function sendFetchRequest(e) {
+        // Coletando a URL
         var url = "{% url 'index' %}";
+
+        // Meus dados a serem enviados
         var valor = {id: 1, nome: "TESTE", sobrenome: "QQQQ"};
+
+        // Token de segurança 1.1
         var csrfToken = "{{ csrf_token }}";
+
+        // Converter os dados para receber no body na view
         var data = new URLSearchParams(valor)
 
+        // Função fetch
         fetch(url, {
             method: "POST",
             headers: {
