@@ -27,7 +27,6 @@
 <script>
     function sendFetchRequest(e) {
         var url = "{% url 'index' %}";
-        // var valor = JSON.stringify({id: 1, nome: "TESTE", sobrenome: "QQQQ"});
         var valor = {id: 1, nome: "TESTE", sobrenome: "QQQQ"};
         var csrfToken = "{{ csrf_token }}";
         var data = new URLSearchParams(valor)
@@ -46,6 +45,11 @@
         })
         .then(function(data) {
             console.log(data);
+            if (data.ok){
+                if(confirm("Gostaria de reiniciar a pagina?")) {
+                    window.location.href = window.location.href
+                }
+            }
         })
         .catch(function(error) {
             console.error(error);
