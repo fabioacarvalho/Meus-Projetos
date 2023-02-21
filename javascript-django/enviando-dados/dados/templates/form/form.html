@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}Form{% endblock %}
+{% block content %}
+
+<div class="content mt-5 mr-5 ml-5 mb-5">
+
+    <div class="mt-3">
+        <a id="btn" href="{% url 'index' %}"><i>CLIQUE AQUI</i></a>
+    </div>
+
+    <form method="POST" action="{% url 'index' %}" > {% csrf_token %}
+        <div class="form-group">
+            <input type="text" class="form-control mt-3" name="id">
+            <input type="text" class="form-control mt-3" name="nome" >
+            <input type="text" class="form-control mt-3" name="sobrenome" >
+            <input type="submit" class="btn btn-success mt-3">
+        </div>
+    </form>
+</div>
+
+<div class="mt-3">
+    <button id="btn" onclick="sendFetchRequest()">CLIQUE AQUI</button>
+</div>
+
+
+{% csrf_token %}
+<script>
+    function sendFetchRequest(e) {
+        var url = "{% url 'index' %}";
+        // var valor = JSON.stringify({id: 1, nome: "TESTE", sobrenome: "QQQQ"});
+        var valor = {id: 1, nome: "TESTE", sobrenome: "QQQQ"};
+        var csrfToken = "{{ csrf_token }}";
+        var data = new URLSearchParams(valor)
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "X-CSRFToken": csrfToken,
+            },
+            body: data,
+        })
+        .then(function(response) {
+            alert("Dados enviados")
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.error(error);
+        });
+        
+    }
+</script>
+
+
+
+<!-- <script>
+    const btn = document.querySelector("#btn").addEventListener("click", function(e){
+        e.preventDefault()
+        console.log("Ta aqui")
+        var token = "{% csrf_token %}"
+        var data = {id: 1, nome: "TESTE", sobrenome: "QQQQ"}
+        fetch("{% url 'index' %}", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": token
+            },
+            body: JSON.stringify(data)
+        })
+    })
+</script> -->
+
+{% endblock %}
